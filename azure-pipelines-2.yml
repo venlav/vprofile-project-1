@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: testlinux
+  vmImage: ubuntu-xenial
 
 steps:
 - script: echo Hello, world!
