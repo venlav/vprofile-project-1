@@ -1,3 +1,5 @@
+trigger:
+- aws-LiftAndShift
 
 pool: myselfhosted
 
