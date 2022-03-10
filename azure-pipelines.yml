@@ -1,14 +1,17 @@
 trigger:
-- aws-LiftAndShift
-pool: myselfhosted
+- {{ branch }}
+
+pool:
+  {{ pool }}
+
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'install'
-    publishJUnitResults: false
+    mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
