@@ -1,8 +1,6 @@
 trigger:
 - aws-LiftAndShift
-
 pool: myselfhosted
-
 steps:
 - task: Maven@3
   inputs:
